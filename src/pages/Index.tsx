@@ -1,59 +1,100 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Heart, Users, BookOpen, ArrowRight } from "lucide-react";
+import { Calendar, Heart, Users, BookOpen, MapPin, Clock, Download, DollarSign } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-community.jpg";
-import unityImage from "@/assets/unity-hands.jpg";
-import worshipImage from "@/assets/worship-space.jpg";
+import letakImage from "@/assets/cho-letak.jpg";
+import qrKodImage from "@/assets/qr-kod.png";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero"></div>
+      {/* Hero - Oblastní setkání */}
+      <section id="setkani" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-br from-[#C87D5C] via-[#E8B4A0] to-[#D4A088]">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Společenství, které
-                <span className="block text-primary">spojuje a posiluje</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                CHO Brno vytváří prostor pro setkávání křesťanů, kteří touží růst ve své víře, 
-                sdílet zkušenosti s Duchem Svatým a budovat společenství založené na vzájemné 
-                lásce a podpoře.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-soft">
-                  Přihlásit se na setkání
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-                <Button size="lg" variant="outline" className="border-2">
-                  Zjistit více
-                </Button>
+            <div className="animate-fade-in text-white">
+              <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-4">
+                Pozvání
               </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+                28. 2. 2026
+              </h1>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 italic" style={{ fontFamily: 'cursive' }}>
+                Nestyď se
+              </h2>
+              <p className="text-2xl font-semibold mb-8">
+                OBLASTNÍ SETKÁNÍ CHO
+              </p>
+
+              <div className="space-y-4 mb-8 text-lg">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Místo konání:</p>
+                    <p>Blansko Katolický dům</p>
+                    <p>Komenského 15, 678 01 Blansko</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Čas:</p>
+                    <p>9:30 – 18:00</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Calendar className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold">Program:</p>
+                    <p>Bude upřesněný</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="bg-white text-[#C87D5C] hover:bg-white/90 shadow-lg text-lg px-8 py-6"
+              >
+                Registrovat se nyní
+              </Button>
             </div>
+
             <div className="relative animate-slide-in-right">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src={heroImage} 
-                  alt="Společenství CHO Brno při bohoslužbě" 
+                  src={letakImage} 
+                  alt="Leták oblastního setkání CHO - Nestyď se" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
-              <div className="absolute -top-6 -right-6 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What We Offer */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      {/* Mapa */}
+      <section className="py-8 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="rounded-2xl overflow-hidden shadow-medium h-[400px]">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.8!2d16.6444!3d49.3628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712f3e8b8b8b8b8%3A0x8b8b8b8b8b8b8b8!2sKomenského%2015%2C%20678%2001%20Blansko!5e0!3m2!1scs!2scz!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa místa konání"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Co nabízíme */}
+      <section id="nabizime" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -109,116 +150,135 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upcoming Event */}
-      <section className="py-16 md:py-24">
+      {/* O nás */}
+      <section id="o-nas" className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-warm rounded-3xl p-8 md:p-12 text-white shadow-medium">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-4">
-                  Aktuální setkání
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Oblastní setkání CHO
-                </h2>
-                <p className="text-xl mb-2">22. února 2025</p>
-                <p className="text-lg mb-6 text-white/90">
-                  Téma: „Služebnosti a pomazání ke službě"
-                </p>
-                <p className="text-white/90 mb-8 leading-relaxed">
-                  "Duch Hospodinův jest nade mnou; proto mne pomazal, abych přinesl chudým radostnou zvěst." 
-                  <span className="block mt-2 font-medium">Lukáš 4,18</span>
-                </p>
-                <div className="space-y-3 mb-8">
-                  <p className="flex items-start gap-2">
-                    <span className="font-semibold min-w-[120px]">Místo:</span>
-                    <span>Církevní střední zdravotnická škola, Grohova 112/16, Brno</span>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <span className="font-semibold min-w-[120px]">Čas:</span>
-                    <span>9:30 – 18:00</span>
-                  </p>
-                </div>
-                <Button 
-                  size="lg" 
-                  className="bg-white text-primary hover:bg-white/90"
-                >
-                  Registrovat se
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-              </div>
-              <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
-                  <img 
-                    src={unityImage} 
-                    alt="Ruce spojené v modlitbě" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Oblastní setkání charismatické obnovy je setkání křesťanů, kteří mají určitou zkušenost 
+                s Duchem svatým a v této zkušenosti touží růst a sdílet ji s ostatními lidmi.
+              </p>
+              <p>
+                Oblastní setkání (nebo zkráceně oblastka) vytváří prostor pro to, aby se různá společenství, 
+                komunity a jednotlivci mohli jednou za čas setkat, sdílet, podpořit a načerpat.
+              </p>
+              <p>
+                Vzniká tak úžasné zázemí vzájemného obohacení a inspirace, které pak můžeme přenášet 
+                do míst, kde sami sloužíme, do našich farností a do našich společenství.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      {/* Video */}
+      <section id="video" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium">
-                <img 
-                  src={worshipImage} 
-                  alt="Prostředí pro bohoslužby" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Co je Charismatická obnova?
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Poznejte CHO blíže
               </h2>
-              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Oblastní setkání charismatické obnovy je setkání křesťanů, kteří mají zkušenost 
-                  s Duchem svatým a v této zkušenosti touží růst a sdílet ji s ostatními lidmi.
-                </p>
-                <p>
-                  Vytváříme prostor pro to, aby se různá společenství, komunity a jednotlivci mohli 
-                  jednou za čas setkat, sdílet, podpořit a načerpat novou sílu.
-                </p>
-                <p>
-                  Vzniká tak úžasné zázemí vzájemného obohacení a inspirace, které pak můžeme 
-                  přenášet do míst, kde sami sloužíme, do našich farností a společenství.
-                </p>
-              </div>
-              <Button size="lg" variant="outline" className="mt-8 border-2">
-                Více o nás
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
+            </div>
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-medium">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/FVBzYUgP9uM"
+                title="Video o CHO"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24">
+      {/* Materiály */}
+      <section id="materialy" className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center border-2 border-primary/20">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Download className="w-8 h-8 text-primary" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Připojte se k nám
+              Propagační materiály
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Ať už jste součástí společenství nebo hledáte místo pro duchovní růst, 
-              jste u nás vítáni. Těšíme se na setkání s vámi!
+            <p className="text-lg text-muted-foreground mb-8">
+              Stáhněte si materiály k akci a pomozte nám s propagací oblastního setkání
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Kontaktujte nás
-              </Button>
-              <Button size="lg" variant="outline" className="border-2">
-                Zjistit více o službách
-              </Button>
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.open('https://drive.google.com', '_blank')}
+            >
+              <Download className="mr-2" size={20} />
+              Otevřít disk s materiály
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Kontakt a podpora */}
+      <section id="kontakt" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Kontakt */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-6">
+                Kontakt
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">CHO Brno</h3>
+                  <p className="text-muted-foreground">
+                    Pro více informací nás neváhejte kontaktovat
+                  </p>
+                </div>
+                <div>
+                  <p className="text-muted-foreground">
+                    Email: info@cho-brno.cz
+                  </p>
+                  <p className="text-muted-foreground">
+                    Web: www.cho-brno.eu
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Podpora */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <DollarSign className="w-5 h-5 text-primary" />
+                </div>
+                <h2 className="text-3xl font-bold text-foreground">
+                  Podpořte nás
+                </h2>
+              </div>
+              <div className="bg-muted/50 rounded-xl p-6 space-y-4">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Číslo účtu:</p>
+                  <p className="text-2xl font-bold text-foreground">2701934227/2010</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">Variabilní symbol:</p>
+                  <p className="text-xl font-semibold text-foreground">2202</p>
+                </div>
+                <div className="pt-4 flex justify-center">
+                  <div className="bg-white p-4 rounded-lg">
+                    <img 
+                      src={qrKodImage} 
+                      alt="QR kód pro platbu" 
+                      className="w-40 h-40"
+                    />
+                    <p className="text-center text-sm text-muted-foreground mt-2">QR Platba</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
