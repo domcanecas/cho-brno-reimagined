@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Heart, Users, BookOpen, MapPin, Clock, Download, DollarSign } from "lucide-react";
+import { Calendar, Heart, Users, BookOpen, MapPin, Clock, Download, Car, Coffee, Church } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import letakImage from "@/assets/cho-letak.jpg";
@@ -13,20 +13,24 @@ const Index = () => {
 
       {/* Hero - Oblastní setkání */}
       <section id="setkani" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-br from-[#C87D5C] via-[#E8B4A0] to-[#D4A088]">
+        {/* Background text */}
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+          <span className="text-[8rem] md:text-[16rem] lg:text-[20rem] font-bold text-white/10 whitespace-nowrap select-none tracking-wider">
+            NESTYĎ SE
+          </span>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in text-white">
               <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-4">
                 Pozvání
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
-                28. 2. 2026
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                Oblastní setkání CHO
               </h1>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 italic" style={{ fontFamily: 'cursive' }}>
-                Nestyď se
-              </h2>
-              <p className="text-2xl font-semibold mb-8">
-                OBLASTNÍ SETKÁNÍ CHO
+              <p className="text-3xl md:text-5xl font-bold mb-8">
+                28. 2. 2026
               </p>
 
               <div className="space-y-4 mb-8 text-lg">
@@ -75,30 +79,90 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mapa */}
-      <section className="py-8 bg-muted/30">
+      {/* Citát */}
+      <section className="py-12 md:py-16 bg-[#5C4A42] text-white">
         <div className="container mx-auto px-4">
-          <div className="rounded-2xl overflow-hidden shadow-medium h-[400px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.8!2d16.6444!3d49.3628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712f3e8b8b8b8b8%3A0x8b8b8b8b8b8b8b8!2sKomenského%2015%2C%20678%2001%20Blansko!5e0!3m2!1scs!2scz!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa místa konání"
-            />
+          <div className="max-w-3xl mx-auto text-center">
+            <blockquote className="text-xl md:text-2xl leading-relaxed italic">
+              <p className="mb-4">Milovaný...</p>
+              <p className="mb-4">rozněcuj oheň Božího daru ... ducha síly, lásky a rozvahy.</p>
+              <p className="mb-6">Nestyď se vydávat svědectví o našem Pánu.</p>
+              <cite className="text-lg not-italic text-white/80 font-medium">2 Tim 1,6-8</cite>
+            </blockquote>
           </div>
         </div>
       </section>
 
-      {/* Co nabízíme */}
+      {/* Mapa a praktické informace */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Mapa */}
+            <div className="rounded-2xl overflow-hidden shadow-medium h-[350px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.8!2d16.6444!3d49.3628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712f3e8b8b8b8b8%3A0x8b8b8b8b8b8b8b8!2sKomenského%2015%2C%20678%2001%20Blansko!5e0!3m2!1scs!2scz!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa místa konání"
+              />
+            </div>
+
+            {/* Praktické informace */}
+            <div className="bg-white rounded-2xl shadow-medium p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Praktické informace</h3>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Car className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Parkování</h4>
+                    <p className="text-muted-foreground">Parkování je možné v okolí Katolického domu zdarma</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Coffee className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Občerstvení</h4>
+                    <p className="text-muted-foreground">Během dne bude zajištěno občerstvení a oběd</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Program pro děti</h4>
+                    <p className="text-muted-foreground">Zajištěn dětský program po celou dobu setkání</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Church className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Mše svatá</h4>
+                    <p className="text-muted-foreground">Setkání bude zakončeno společnou mší svatou</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Co spolu prožíváme */}
       <section id="nabizime" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Co nabízíme
+              Co spolu prožíváme
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Vytváříme prostor pro duchovní růst a vzájemnou podporu
@@ -150,12 +214,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* O nás */}
-      <section id="o-nas" className="py-16 md:py-24 bg-muted/30">
+      {/* Co je oblastní setkání */}
+      <section id="o-nas" className="py-16 md:py-24 bg-[#F5E6E0]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+              Co je oblastní setkání
+            </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
+              <p className="font-semibold text-foreground">
                 Oblastní setkání charismatické obnovy je setkání křesťanů, kteří mají určitou zkušenost 
                 s Duchem svatým a v této zkušenosti touží růst a sdílet ji s ostatními lidmi.
               </p>
@@ -163,7 +230,7 @@ const Index = () => {
                 Oblastní setkání (nebo zkráceně oblastka) vytváří prostor pro to, aby se různá společenství, 
                 komunity a jednotlivci mohli jednou za čas setkat, sdílet, podpořit a načerpat.
               </p>
-              <p>
+              <p className="font-semibold text-foreground">
                 Vzniká tak úžasné zázemí vzájemného obohacení a inspirace, které pak můžeme přenášet 
                 do míst, kde sami sloužíme, do našich farností a do našich společenství.
               </p>
@@ -173,7 +240,7 @@ const Index = () => {
       </section>
 
       {/* Video */}
-      <section id="video" className="py-16 md:py-24 bg-background">
+      <section id="video" className="py-16 md:py-24 bg-[#E8DDD8]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
@@ -185,10 +252,10 @@ const Index = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/FVBzYUgP9uM"
+                src="https://www.youtube.com/embed/g386ROk-WPE"
                 title="Video o CHO"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
               />
@@ -198,7 +265,7 @@ const Index = () => {
       </section>
 
       {/* Materiály */}
-      <section id="materialy" className="py-16 md:py-24 bg-muted/30">
+      <section id="materialy" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -223,7 +290,7 @@ const Index = () => {
       </section>
 
       {/* Kontakt a podpora */}
-      <section id="kontakt" className="py-16 md:py-24 bg-background">
+      <section id="kontakt" className="py-16 md:py-24 bg-[#F0EBE8]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Kontakt */}
@@ -251,15 +318,10 @@ const Index = () => {
 
             {/* Podpora */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-primary" />
-                </div>
-                <h2 className="text-3xl font-bold text-foreground">
-                  Podpořte nás
-                </h2>
-              </div>
-              <div className="bg-muted/50 rounded-xl p-6 space-y-4">
+              <h2 className="text-3xl font-bold text-foreground mb-6">
+                Podpořte nás
+              </h2>
+              <div className="bg-white rounded-xl p-6 space-y-4 shadow-sm">
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Číslo účtu:</p>
                   <p className="text-2xl font-bold text-foreground">2701934227/2010</p>
@@ -269,7 +331,7 @@ const Index = () => {
                   <p className="text-xl font-semibold text-foreground">2202</p>
                 </div>
                 <div className="pt-4 flex justify-center">
-                  <div className="bg-white p-4 rounded-lg">
+                  <div className="bg-muted/30 p-4 rounded-lg">
                     <img 
                       src={qrKodImage} 
                       alt="QR kód pro platbu" 
