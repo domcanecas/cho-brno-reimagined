@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Heart, Users, MapPin, Clock, FileText, Image, Flame, Handshake, Car, Coffee, Church } from "lucide-react";
+import { Calendar, Heart, Users, MapPin, Clock, FileText, Image, Flame, Handshake, Car, Coffee, Church, Mail, Facebook, Youtube } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import letakImage from "@/assets/cho-letak.jpg";
@@ -313,21 +313,37 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-foreground mb-6">
                 Kontakt
               </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">CHO Brno</h3>
-                  <p className="text-muted-foreground">
-                    Pro více informací nás neváhejte kontaktovat
-                  </p>
-                </div>
-                <div>
-                  <p className="text-muted-foreground">
-                    Email: info@cho-brno.cz
-                  </p>
-                  <p className="text-muted-foreground">
-                    Web: www.cho-brno.eu
-                  </p>
-                </div>
+              <p className="text-muted-foreground mb-6">
+                Pro více informací nás neváhejte kontaktovat
+              </p>
+              <div className="flex items-center gap-2 mb-6">
+                <Mail size={18} className="text-primary" />
+                <a 
+                  href="mailto:cho-brno@seznam.cz" 
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  cho-brno@seznam.cz
+                </a>
+              </div>
+              <div className="flex items-center gap-6">
+                <a 
+                  href="https://www.facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#5C4A42] hover:text-primary transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={28} />
+                </a>
+                <a 
+                  href="https://www.youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#5C4A42] hover:text-primary transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube size={28} />
+                </a>
               </div>
             </div>
 
