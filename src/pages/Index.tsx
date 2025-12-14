@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Heart, Users, BookOpen, MapPin, Clock, Download, Car, Coffee, Church } from "lucide-react";
+import { Calendar, Heart, Users, MapPin, Clock, FileText, Image, Flame, Handshake, Car, Coffee, Church } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import letakImage from "@/assets/cho-letak.jpg";
 import qrKodImage from "@/assets/qr-kod.png";
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -61,6 +60,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-[#C87D5C] hover:bg-white/90 shadow-lg text-lg px-8 py-6"
+                onClick={() => window.open('https://forms.gle/KsXj9CqJrp5KUgdX8', '_blank')}
               >
                 Registrovat se nyní
               </Button>
@@ -165,31 +165,31 @@ const Index = () => {
               Co spolu prožíváme
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Vytváříme prostor pro duchovní růst a vzájemnou podporu
+              Vytváříme prostor pro růst v milosti křtu v Duchu svatém
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
+                icon: Flame,
+                title: "Zkušenost s Duchem svatým",
+                description: "Žijeme Boží milostí - nezaslouženým darem pro člověka v osobě Ducha svatého.",
+              },
+              {
+                icon: Handshake,
+                title: "Společenství a spolupráce",
+                description: "Propojujeme společenství, komunity a jednotlivce z brněnské diecéze. Jsme jedno v Kristu.",
+              },
+              {
                 icon: Calendar,
-                title: "Pravidelná setkání",
-                description: "Oblastní setkání několikrát ročně s modlitbou, katechezí a sdílením",
-              },
-              {
-                icon: Users,
-                title: "Komunita",
-                description: "Propojujeme společenství a jednotlivce z celé brněnské diecéze",
-              },
-              {
-                icon: BookOpen,
-                title: "Učení",
-                description: "Katecheze, workshopy a přímluvná modlitba pro růst ve víře",
+                title: "Oblastní setkání",
+                description: "Pravidelná setkání s katechezí, workshopy, sdílením a modlitbou pro růst v pomazání.",
               },
               {
                 icon: Heart,
-                title: "Program pro děti",
-                description: "Kvalitní péče o děti během setkání od zkušeného týmu",
+                title: "Vztahy a přijetí",
+                description: "To je mé přikázání, abyste se milovali navzájem, jako jsem já miloval vás. Jan 15.12",
               },
             ].map((item, index) => (
               <Card 
@@ -221,16 +221,16 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
               Co je oblastní setkání
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p className="font-semibold text-foreground">
-                Oblastní setkání charismatické obnovy je setkání křesťanů, kteří mají určitou zkušenost 
-                s Duchem svatým a v této zkušenosti touží růst a sdílet ji s ostatními lidmi.
+            <div className="space-y-6 text-lg text-foreground leading-relaxed">
+              <p className="font-semibold">
+                Oblastní setkání charismatické obnovy je setkání křesťanů, kteří mají (nebo chtějí mít) zkušenost 
+                s Duchem svatým a v této zkušenosti touží růst a sdílet ji s ostatními.
               </p>
               <p>
                 Oblastní setkání (nebo zkráceně oblastka) vytváří prostor pro to, aby se různá společenství, 
                 komunity a jednotlivci mohli jednou za čas setkat, sdílet, podpořit a načerpat.
               </p>
-              <p className="font-semibold text-foreground">
+              <p className="font-semibold">
                 Vzniká tak úžasné zázemí vzájemného obohacení a inspirace, které pak můžeme přenášet 
                 do míst, kde sami sloužíme, do našich farností a do našich společenství.
               </p>
@@ -267,24 +267,39 @@ const Index = () => {
       {/* Materiály */}
       <section id="materialy" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Download className="w-8 h-8 text-primary" />
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Propagační materiály
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Stáhněte si materiály k akci a pomozte nám s propagací oblastního setkání
             </p>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90"
-              onClick={() => window.open('https://drive.google.com', '_blank')}
-            >
-              <Download className="mr-2" size={20} />
-              Otevřít disk s materiály
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => window.open('https://drive.google.com/file/d/1w19tiwIM0A08io4yGyQ5F67nGT08j8LN/view?usp=drive_link', '_blank')}
+              >
+                <FileText className="mr-2" size={20} />
+                Plakát A4
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => window.open('https://drive.google.com/file/d/19DXfSIGbslW1AG4zofLVTRwzPJAmkjBk/view?usp=drive_link', '_blank')}
+              >
+                <FileText className="mr-2" size={20} />
+                Plakát A3
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => window.open('https://drive.google.com/file/d/1Kqfmnn5kmL3fRPUqep9cM2u1xzQgZeJc/view?usp=drive_link', '_blank')}
+              >
+                <Image className="mr-2" size={20} />
+                Instagram post
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -331,13 +346,13 @@ const Index = () => {
                   <p className="text-xl font-semibold text-foreground">2202</p>
                 </div>
                 <div className="pt-4 flex justify-center">
-                  <div className="bg-muted/30 p-4 rounded-lg">
+                  <div className="bg-muted/30 p-6 rounded-lg">
                     <img 
                       src={qrKodImage} 
                       alt="QR kód pro platbu" 
-                      className="w-40 h-40"
+                      className="w-56 h-56"
                     />
-                    <p className="text-center text-sm text-muted-foreground mt-2">QR Platba</p>
+                    <p className="text-center text-sm text-muted-foreground mt-3">QR Platba</p>
                   </div>
                 </div>
               </div>

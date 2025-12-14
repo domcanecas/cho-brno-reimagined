@@ -6,8 +6,8 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "setkani", label: "Oblastní setkání" },
-    { id: "nabizime", label: "Co nabízíme" },
+    { id: "setkani", label: "Setkání" },
+    { id: "nabizime", label: "Co prožíváme" },
     { id: "o-nas", label: "O nás" },
     { id: "video", label: "Video" },
     { id: "materialy", label: "Materiály" },
@@ -29,21 +29,24 @@ const Navbar = () => {
           {/* Logo */}
           <span className="text-xl font-bold text-primary">CHO Brno</span>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Desktop Navigation - full menu visible */}
+          <div className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
             <Button 
               size="sm" 
               className="bg-primary hover:bg-primary/90"
-              onClick={() => scrollToSection("setkani")}
+              onClick={() => window.open('https://forms.gle/KsXj9CqJrp5KUgdX8', '_blank')}
             >
               Registrace
             </Button>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-foreground hover:text-primary transition-colors"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -51,7 +54,7 @@ const Navbar = () => {
             <Button 
               size="sm" 
               className="bg-primary hover:bg-primary/90"
-              onClick={() => scrollToSection("setkani")}
+              onClick={() => window.open('https://forms.gle/KsXj9CqJrp5KUgdX8', '_blank')}
             >
               Registrace
             </Button>
@@ -64,9 +67,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="py-4 animate-fade-in">
+          <div className="md:hidden py-4 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
