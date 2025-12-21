@@ -7,6 +7,7 @@ const Navbar = () => {
 
   const navItems = [
     { id: "setkani", label: "Setkání" },
+    { id: "program", label: "Program" },
     { id: "nabizime", label: "Co prožíváme" },
     { id: "o-nas", label: "O nás" },
     { id: "video", label: "Video" },
