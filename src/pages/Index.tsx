@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Heart, Users, MapPin, Clock, FileText, Image, Flame, Handshake, Car, Coffee, Church, Mail, Facebook, Youtube } from "lucide-react";
+import { Calendar, Heart, Users, MapPin, Clock, FileText, Image, Flame, Handshake, Car, Coffee, Church, Mail, Music, BookOpen, MessageSquare, Sparkles, FileImage } from "lucide-react";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import letakImage from "@/assets/cho-letak.jpg";
@@ -93,7 +94,38 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Mapa a praktické informace */}
+      {/* Program */}
+      <section id="program" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10 text-center">
+              Program
+            </h2>
+            <div className="space-y-0">
+              {[
+                { icon: Music, text: "Modlitba chval" },
+                { icon: BookOpen, text: "Katecheze na 2 Tim 1,6-8" },
+                { icon: Church, text: "Mše svatá" },
+                { icon: Coffee, text: "Oběd" },
+                { icon: MessageSquare, text: "Info okénko" },
+                { icon: Handshake, text: "Praktický blok: Jak vydat svědectví" },
+                { icon: Sparkles, text: "Modlitba \"Rozněcuj oheň božího daru\"" },
+              ].map((item, index) => (
+                <div 
+                  key={index} 
+                  className={`flex items-center gap-4 py-4 ${index !== 6 ? 'border-b border-border' : ''}`}
+                >
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-lg font-medium text-foreground">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-stretch">
@@ -121,7 +153,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Parkování</h4>
-                    <p className="text-muted-foreground">Parkování je možné v okolí Katolického domu zdarma</p>
+                    <p className="text-muted-foreground">Parkování možné v okolí Katolického domu, který se zároveň nachází 3min od vlakové zastávky.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -130,7 +162,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Občerstvení</h4>
-                    <p className="text-muted-foreground">Během dne bude zajištěno občerstvení a oběd</p>
+                    <p className="text-muted-foreground">Během dne bude zajištěno občerstvení a možnost objednání oběda.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -139,7 +171,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Program pro děti</h4>
-                    <p className="text-muted-foreground">Zajištěn dětský program po celou dobu setkání</p>
+                    <p className="text-muted-foreground">Zajištěn dětský program po dobu oblastního setkání, nutné děti předem registrovat.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -148,7 +180,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Mše svatá</h4>
-                    <p className="text-muted-foreground">Setkání bude zakončeno společnou mší svatou</p>
+                    <p className="text-muted-foreground">Během setkání budeme slavit společnou mši svatou.</p>
                   </div>
                 </div>
               </div>
@@ -278,26 +310,26 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90"
-                onClick={() => window.open('https://drive.google.com/file/d/1w19tiwIM0A08io4yGyQ5F67nGT08j8LN/view?usp=drive_link', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/13BN8bMNmZS8d50doNyPgbiAla4hcLrm8/view?usp=sharing', '_blank')}
               >
-                <FileText className="mr-2" size={20} />
-                Plakát A4
+                <FileImage className="mr-2" size={20} />
+                Plakát
               </Button>
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90"
-                onClick={() => window.open('https://drive.google.com/file/d/19DXfSIGbslW1AG4zofLVTRwzPJAmkjBk/view?usp=drive_link', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1u76vmYfGxquC53AyHy6A_GaZyqC0Ji2L/view?usp=sharing', '_blank')}
               >
-                <FileText className="mr-2" size={20} />
-                Plakát A3
+                <FaInstagram className="mr-2" size={20} />
+                Instagram
               </Button>
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90"
-                onClick={() => window.open('https://drive.google.com/file/d/1Kqfmnn5kmL3fRPUqep9cM2u1xzQgZeJc/view?usp=drive_link', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/11Tk0F6LKjblnP1Vin6cE4Ef385VYhBlw/view?usp=sharing', '_blank')}
               >
-                <Image className="mr-2" size={20} />
-                Instagram post
+                <FaFacebook className="mr-2" size={20} />
+                Facebook
               </Button>
             </div>
           </div>
@@ -313,36 +345,24 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-foreground mb-6">
                 Kontakt
               </h2>
-              <p className="text-muted-foreground mb-6">
-                Pro více informací nás neváhejte kontaktovat
-              </p>
-              <div className="flex items-center gap-2 mb-6">
+              <div className="mb-4">
+                <p className="font-semibold text-foreground mb-1">Pořadatel</p>
+                <a 
+                  href="https://cho.cz" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Charismatická obnova, z.s. (cho.cz)
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
                 <Mail size={18} className="text-primary" />
                 <a 
                   href="mailto:cho-brno@seznam.cz" 
                   className="text-foreground hover:text-primary transition-colors"
                 >
                   cho-brno@seznam.cz
-                </a>
-              </div>
-              <div className="flex items-center gap-6">
-                <a 
-                  href="https://www.facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#5C4A42] hover:text-primary transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={28} />
-                </a>
-                <a 
-                  href="https://www.youtube.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-[#5C4A42] hover:text-primary transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube size={28} />
                 </a>
               </div>
             </div>
@@ -359,7 +379,7 @@ const Index = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Variabilní symbol:</p>
-                  <p className="text-xl font-semibold text-foreground">2202</p>
+                  <p className="text-xl font-semibold text-foreground">2802</p>
                 </div>
                 <div className="pt-4 flex justify-center">
                   <div className="bg-muted/30 p-6 rounded-lg">
