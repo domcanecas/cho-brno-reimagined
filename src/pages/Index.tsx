@@ -52,8 +52,12 @@ const Index = () => {
                 <div className="flex items-start gap-3">
                   <Calendar className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-semibold">Program:</p>
-                    <p>Bude upřesněný</p>
+                    <button 
+                      onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="font-semibold hover:underline cursor-pointer"
+                    >
+                      Program →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -345,7 +349,18 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-foreground mb-6">
                 Kontakt
               </h2>
-              <div className="mb-4">
+              <div className="mb-6">
+                <p className="font-semibold text-foreground mb-1">Organizace</p>
+                <p className="text-foreground">Oblastní tým Charis</p>
+                <p className="text-muted-foreground mt-2">Kontaktovat nás můžete emailem na adrese:</p>
+                <a 
+                  href="mailto:cho-brno@seznam.cz" 
+                  className="text-primary hover:underline font-medium"
+                >
+                  cho-brno@seznam.cz
+                </a>
+              </div>
+              <div>
                 <p className="font-semibold text-foreground mb-1">Pořadatel</p>
                 <a 
                   href="https://cho.cz" 
@@ -354,15 +369,6 @@ const Index = () => {
                   className="text-primary hover:underline"
                 >
                   Charismatická obnova, z.s. (cho.cz)
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={18} className="text-primary" />
-                <a 
-                  href="mailto:cho-brno@seznam.cz" 
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  cho-brno@seznam.cz
                 </a>
               </div>
             </div>
